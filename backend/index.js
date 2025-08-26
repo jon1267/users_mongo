@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import { connectDB } from './db/connectDB.js'; 
+import { connectDB } from './db/connectDB.js';
+import authRoutes from './routes/auth.route.js'
 
 dotenv.config();
 
@@ -11,7 +12,6 @@ app.get('/', (req,res) => {
 });
 
 app.use('/api/auth', authRoutes);
-// time 15:30 / 4:11:46
 
 app.listen(3000, () => {
   connectDB();
